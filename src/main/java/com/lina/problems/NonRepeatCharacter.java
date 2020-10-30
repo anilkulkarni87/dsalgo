@@ -3,6 +3,22 @@ package com.lina.problems;
 import java.util.*;
 
 public class NonRepeatCharacter {
+    class TreeNode {
+        int data;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int data, TreeNode left, TreeNode right) {
+            this.data = data;
+            this.left = left;
+            this.right = right;
+        }
+    }
+
+    class ListNode {
+        int data;
+        ListNode next;
+        ListNode(int data) { this.data = data; }
+    }
     public static void main(String[] args) {
 
         //System.out.println(firstNonRepeatedCharacter("aabcde"));
@@ -196,4 +212,62 @@ Modified to :
         return mergedArr;
 
     }
+
+    public ArrayList<Integer> inorderItr(TreeNode root) {
+        ArrayList<Integer> arr = new ArrayList<Integer>();
+        if(root == null){
+            return arr;
+        }
+
+        Stack<TreeNode> inorderStack = new Stack<TreeNode>();
+        TreeNode current = root;
+        while(current != null || !inorderStack.isEmpty()){
+            while(current != null){
+                inorderStack.push(current);
+                current = current.left;
+            }
+
+            current = inorderStack.pop();
+            arr.add(current.data);
+            current = current.right;
+        }
+
+        return arr;
+
+    }
+
+    public static void transposeMatrix(int[][] matrix) {
+        for(int i =0; i<matrix.length;i++){
+            for(int j=i+1; j<matrix[0].length;j++){
+                int temp = matrix[i][j];
+                matrix[i][j]=matrix[j][i];
+                matrix[j][i]=temp;
+            }
+        }
+    }
+
+
+    public static void rotateSquareImageCCW(int[][] matrix) {
+        int rows = matrix.length;
+        int columns = matrix[0].length;
+
+        for(int i=0; i< rows; i ++){
+            for(int j=i+1; j<columns;j++){
+                int temp = matrix[i][j];
+                matrix[i][j] = matrix[j][i];
+                matrix[j][i] = temp;
+            }
+        }
+
+        for(int i =0; i<rows/2; i ++){
+            for(int j=0;j<columns ; j ++){
+                int temp = matrix[i][j];
+                matrix[i][j] = matrix[rows-1-i][j];
+                matrix[rows-1-i][j] = temp;
+
+            }
+        }
+    }
+
+
 }
