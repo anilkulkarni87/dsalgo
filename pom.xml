@@ -16,6 +16,12 @@
             <version>4.13</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.googlecode.princeton-java-introduction/introcs -->
+        <dependency>
+            <groupId>com.googlecode.princeton-java-introduction</groupId>
+            <artifactId>introcs</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
 
 </project>

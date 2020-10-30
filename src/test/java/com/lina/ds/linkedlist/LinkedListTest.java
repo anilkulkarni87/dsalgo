@@ -2,6 +2,8 @@ package com.lina.ds.linkedlist;
 
 import org.junit.Test;
 
+import java.util.HashMap;
+
 public class LinkedListTest {
 
     @Test
@@ -22,5 +24,6 @@ public class LinkedListTest {
 
     @Test
     public void removeLast() {
+
     }
 }
